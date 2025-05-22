@@ -1,5 +1,6 @@
 package Tarea01;
 
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -341,7 +342,7 @@ public class Ejercicios {
      */
     public static void Ejercicio_16() {
         System.out.println("Ejercicio 16\n");
-        
+
         int numeroAnterior = 0;
         int numeroActual = 1;
         int sumaDeFibonacci = 0;
@@ -402,9 +403,121 @@ public class Ejercicios {
         System.out.println();
     }
 
-    /**  */
-    public static void Ejercicio_() {
-        System.out.println("Ejercicio \n");
+    /** 19.Leer un número y calcularle su factorial. */
+    public static void Ejercicio_19() {
+        System.out.println("Ejercicio 19\n");
+        System.out.print("Introduce un número: ");
+        int numeroX = scanner.nextInt();
+
+        /**
+         * //! Aqui es necesario usar algo como el BigInteger de C#
+         * System.Numerics.BigInteger;
+         * Casualmente se llama igual en Java, esto es para que cuando pruebe con un
+         * numero grande
+         * funcione con un limite de capacidad mas grande que el de un entero normal y
+         * no colapse
+         */
+        BigInteger factorialGrande = BigInteger.ONE;
+
+        // Toma el numeroX ingresado por el usuario y calcula el factorial
+        for (int contador = 2; contador <= numeroX; contador++) {
+            factorialGrande = factorialGrande.multiply(BigInteger.valueOf(contador));
+        }
+        /**
+         * Cual es el limite de BigInteger????
+         * * Probe con 100000 y funciono
+         */
+        System.out.println(numeroX + "! = " + factorialGrande);
+        System.out.println();
+    }
+
+    /**
+     * 20.Leer un número y calcularles la factorial a todos
+     * los enteros comprendidos entre 1 y el número leído.
+     ** Reutilice mi código anterior y le quite algunos comentarios
+     */
+    public static void Ejercicio_20() {
+        System.out.println("Ejercicio 20\n");
+        System.out.print("Introduce un número: ");
+        int numeroX = scanner.nextInt();
+        System.out.println("Estos son los factoriales entre 1 y el número " + numeroX);
+
+        /**
+         * Toma el numeroX ingresado por el usuario y inicia un contador para
+         * calcula el factorial de los enteros comprendidos entre 1 y numeroX.
+         */
+        for (int contador1 = 1; contador1 <= numeroX; contador1++) {
+            // Uso BigInteger para manejar numeros enteros mas grandes
+            BigInteger factorialGrande = BigInteger.ONE;
+
+            // El mismo codigo de antes pero usando el contador1 inicial para establecer el
+            // hasta
+            for (int contador2 = 2; contador2 <= contador1; contador2++) {
+                factorialGrande = factorialGrande.multiply(BigInteger.valueOf(contador2));
+            }
+            System.out.println(contador1 + "! = " + factorialGrande);
+        }
+        System.out.println();
+    }
+
+    /**
+     * 21. Leer un número entero y calcular el promedio entero de las
+     * factoriales de los enteros comprendidos entre 1 y el número leído.
+     */
+    public static void Ejercicio_21() {
+        System.out.println("Ejercicio 21\n");
+        System.out.print("Introduce un número: ");
+        int numeroX = scanner.nextInt();
+
+        // Uso BigInteger para manejar numeros enteros mas grandes
+        BigInteger factorialSuma = BigInteger.ZERO;
+
+        // For para calcular la suma de los factoriales de 1 a numeroX
+        for (int contador1 = 1; contador1 <= numeroX; contador1++) {
+            // El mismo BigInteger de antes
+            BigInteger factorialGrande = BigInteger.ONE;
+
+            // Calculo contador1!
+            for (int contador2 = 2; contador2 <= contador1; contador2++) {
+                factorialGrande = factorialGrande.multiply(BigInteger.valueOf(contador2));
+            }
+
+            // Sumo el factorial al acumulador
+            factorialSuma = factorialSuma.add(factorialGrande);
+        }
+
+        // Calculo el promedio entero dividiendo la suma entre numeroX
+        BigInteger factorialPromedio = factorialSuma.divide(BigInteger.valueOf(numeroX));
+
+        // Muestro el promedio entero
+        System.out.println("Promedio entero de factoriales: " + factorialPromedio);
+        System.out.println();
+    }
+
+    /** 22.Leer un número entero y calcular a cuánto es igual la sumatoria de todas
+     * las factoriales de los números comprendidos entre 1 y el número leído */
+    public static void Ejercicio_22() {
+        System.out.println("Ejercicio 22\n");
+        System.out.print("Introduce un número: ");
+        int numeroX = scanner.nextInt();
+
+        // Uso BigInteger para manejar numeros enteros mas grandes
+        BigInteger factorialSuma = BigInteger.ZERO;
+
+        // For para calcular la suma de los factoriales de 1 a numeroX
+        for (int contador1 = 1; contador1 <= numeroX; contador1++) {
+            // El mismo BigInteger de antes
+            BigInteger factorialGrande = BigInteger.ONE;
+
+            // Calcular contador1!
+            for (int contador2 = 2; contador2 <= contador1; contador2++) {
+                factorialGrande = factorialGrande.multiply(BigInteger.valueOf(contador2));
+            }
+            // Acumulo el factorial en la suma
+            factorialSuma = factorialSuma.add(factorialGrande);
+        }
+        // Muestro el resultado de la sumatoria
+        System.out.println("Sumatoria de los factoriales: " + factorialSuma);
         System.out.println();
     }
 }
