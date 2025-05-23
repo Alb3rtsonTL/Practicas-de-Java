@@ -1,3 +1,4 @@
+//* Package donde se encuentran los archivos del proyecto
 package Tarea01;
 
 import java.math.BigInteger;
@@ -5,37 +6,35 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
+/** Esta es la clase en donde se encuentran los 22 ejercicios, cada uno en un método aparte desglosado. */
 public class Ejercicios {
 
     private static final Scanner scanner = new Scanner(System.in);
 
     /**
-     * 1.Declarar variable de los diferentes tipos,
-     * asignarles valor e imprimir el valor.
+     * 1.Declarar variable de los diferentes tipos, asignarles valor e imprimir el valor.
      */
     public static void Ejercicio_01() {
         System.out.println("Ejercicio 1\n");
 
         // Diferentes tipos de variables
-        int entero_edad = 20;
-        double doble_temperatura = 3.14;
-        char caracter_letra = 'A';
-        boolean booleano_verdadero = true;
-        String texto_mensaje = "Este fue el primer ejercicio\n";
+        int enteroEdad = 20;
+        double dobleTemperatura = 3.14;
+        char charLetra = 'A';
+        boolean booleano = true;
+        String mensaje = "Este fue el primer ejercicio\n";
 
         // MMuestro los valores de las variables
-        System.out.println("Entero: " + entero_edad);
-        System.out.println("Flotante doble: " + doble_temperatura);
-        System.out.println("Caracter: " + caracter_letra);
-        System.out.println("Buleano: " + booleano_verdadero);
-        System.out.println("Texto: " + texto_mensaje);
+        System.out.println("Entero: " + enteroEdad);
+        System.out.println("Flotante doble: " + dobleTemperatura);
+        System.out.println("Carácter: " + charLetra);
+        System.out.println("Booleano: " + booleano);
+        System.out.println("Texto: " + mensaje);
         System.out.println();
     }
 
-    /**
-     * 2.Buscar cómo se declara una constante en java e imprimir el valor.
-     * Probar de cambiar su valor luego y ver que es lo que pasa.
-     */
+    /** 2.Buscar cómo se declara una constante en java e imprimir el valor.
+     * Probar de cambiar su valor luego y ver que es lo que pasa. */
     public static void Ejercicio_02() {
         System.out.println("Ejercicio 2\n");
 
@@ -48,24 +47,19 @@ public class Ejercicios {
     }
 
     /**
-     * 3.Declara un entero, incrementarlo, decrementarlo,
-     * hacer operaciones con el.
+     * 3.Declara un entero, incrementarlo, decrementarlo, hacer operaciones con el.
      */
     public static void Ejercicio_03() {
         System.out.println("Ejercicio 3\n");
-
         // Inicio el valor de la variable
         int numeroX = 16;
         System.out.println("El numero ahora es: " + numeroX);
-
         // Incremento el valor de la variable
         numeroX++;
         System.out.println("Incremento: " + numeroX);
-
         // Decremento el valor de la variable
         numeroX--;
         System.out.println("Decremento: " + numeroX);
-
         // Hago las operaciones
         int sumar = numeroX + 19;
         int restar = numeroX - 6;
@@ -83,8 +77,7 @@ public class Ejercicios {
     }
 
     /**
-     * 4.Declarar un float con valor = 10152466.25.
-     * Declarar un byte que es igual a 5 + el float.
+     * 4.Declarar un float con valor = 10152466.25. Declarar un byte que es igual a 5 + el float.
      */
     public static void Ejercicio_04() {
         System.out.println("Ejercicio 4\n");
@@ -102,57 +95,55 @@ public class Ejercicios {
     }
 
     /**
-     * 5.Adjuntar comentario de una y de varias líneas en su código.
-     * Imprimir la fecha y hora del sistema.
+     * 5.Adjuntar comentario de una y de varias líneas en su código. Imprimir la fecha y hora del sistema.
      */
     public static void Ejercicio_05() {
         System.out.println("Ejercicio 5\n");
 
-        // Aqui tomo la fecha y hora actuales usando la clase LocalDateTime y su metodo
+        // Aquí tomo la fecha y hora actuales usando la clase LocalDateTime y su método
         // now()
-        LocalDateTime fechaHora_actual = LocalDateTime.now();
+        LocalDateTime fechaHoraActual = LocalDateTime.now();
 
         // Indico cual sera el formato que usare
-        DateTimeFormatter formato_FH = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        DateTimeFormatter formatoFeHora = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
         // Muestro la fecha y hora con el formato aplicado
-        System.out.println("Fecha y hora actuales: " + fechaHora_actual.format(formato_FH));
+        System.out.println("Fecha y hora actuales: " + fechaHoraActual.format(formatoFeHora));
 
         /*
          * En C# si se deja un Console.WriteLine(); sin nada escrito hace un salto de
-         * linea
-         * por eso probe con System.out.println(); y funciona igual
+         * linea por eso probe con System.out.println(); y funciona igual
          */
         System.out.println();
     }
 
     /**
-     * 6.Declarar un entero y asignarle un valor.
-     * Si el valor < 5 imprimir "Pequeño", si no imprimir "Grande".
+     * 6.Declarar un entero y asignarle un valor. Si el valor < 5 imprimir "Pequeño", si no imprimir "Grande".
      */
     public static void Ejercicio_06() {
         System.out.println("Ejercicio 6a");
         System.out.print("Introduce un entero: ");
+        /** Uso scanner.nextInt() para tomar el input del usuario desde el teclado */
+        int primerNumero = scanner.nextInt();
 
-        /** Uso scaner.nextInt() para tomar el input del usuario desde el teclado */
-        int n1 = scanner.nextInt();
-
-        // Si el primer numero o n1 es menor a 5
-        if (n1 < 5) {
+        // Si el primer numero o primerNumero es menor a 5
+        if (primerNumero < 5) {
             System.out.println("Pequeño");
         } else {
             System.out.println("Grande");
         }
+
         System.out.println("\nEjercicio 6b");
         System.out.print("Introduce otro entero: ");
         // Vuelvo a usar scanner.nextInt() y guardo el input en la variable entera nu2
-        int n2 = scanner.nextInt();
+        int segundoNumero = scanner.nextInt();
+
         // Si el segundo numero es 1, 2, o 3
-        if (n2 == 1) {
-            System.out.println("Uno"); // En el word sale "no"
-        } else if (n2 == 2) {
+        if (segundoNumero == 1) {
+            System.out.println("Uno"); // En el mandato en word sale "no"
+        } else if (segundoNumero == 2) {
             System.out.println("Dos");
-        } else if (n2 == 3) {
+        } else if (segundoNumero == 3) {
             System.out.println("3"); // Pense ponerlo en texto, pero mejor no
         } else {
             /** En caso de que no sea ninguna de las tres */
@@ -162,8 +153,7 @@ public class Ejercicios {
     }
 
     /**
-     * 7.Declarar un entero = 0. Mientras el entero <5,
-     * imprimir su valor y incrementarlo de 1.
+     * 7.Declarar un entero = 0. Mientras el entero <5, imprimir su valor y incrementarlo de 1.
      */
     public static void Ejercicio_07() {
         System.out.println("Ejercicio 7\n");
@@ -178,8 +168,7 @@ public class Ejercicios {
     }
 
     /**
-     * 8.Declarar un entero = 10. Mientras el entero >5,
-     * imprimir su valor y decrementarlo de 1,
+     * 8.Declarar un entero = 10. Mientras el entero >5, imprimir su valor y decrementarlo de 1,
      * pero imprime por lo menos una vez su valor.
      */
     public static void Ejercicio_08() {
@@ -196,10 +185,8 @@ public class Ejercicios {
     }
 
     /**
-     * 9.Crear un bucle que se ejecuta 10 veces utilizando un entero que va de 10 a
-     * 19
-     * incrementándose en 1. Imprimir en cada bucle el valor del entero,
-     * menos cuando es igual a 15.
+     * 9.Crear un bucle que se ejecuta 10 veces utilizando un entero que va de 10 a19
+     * incrementándose en 1. Imprimir en cada bucle el valor del entero, menos cuando es igual a 15.
      */
     public static void Ejercicio_09() {
         System.out.println("Ejercicio 9\n");
@@ -218,12 +205,12 @@ public class Ejercicios {
     public static void Ejercicio_10() {
         System.out.println("Ejercicio 10\n");
         System.out.print("Número 1: ");
-        int n1 = scanner.nextInt();
+        int primerNumero = scanner.nextInt();
         System.out.print("Número 2: ");
-        int n2 = scanner.nextInt();
+        int segundoNumero = scanner.nextInt();
 
-        // Si el valor de ambos numeros es igual
-        if (n1 == n2) {
+        // Si el valor de ambos números es igual
+        if (primerNumero == segundoNumero) {
             System.out.println("Son iguales");
         } else {
             System.out.println("No son iguales");
@@ -232,31 +219,22 @@ public class Ejercicios {
     }
 
     /**
-     * 11. Pedir una nota de 0 a 10 y mostrarla de la forma:
-     * Insuficiente, Suficiente, Bien usando un switch
+     * 11. Pedir una nota de 0 a 10 y mostrarla de la forma: Insuficiente, Suficiente, Bien usando un switch.
      */
     public static void Ejercicio_11() {
         System.out.println("Ejercicio 11\n");
         System.out.print("Introduce una nota del 0 al 10: ");
-        int nota_usuario = scanner.nextInt();
+        int notaUsuario = scanner.nextInt();
 
-        // Segun la nota correspondiente muestro la indicación
-        switch (nota_usuario) {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
+        // Según la nota correspondiente muestro la indicación
+        switch (notaUsuario) {
+            case 0, 1, 2, 3, 4:
                 System.out.println("Insuficiente");
                 break;
-            case 5:
-            case 6:
+            case 5, 6:
                 System.out.println("Suficiente");
                 break;
-            case 7:
-            case 8:
-            case 9:
-            case 10:
+            case 7, 8, 9, 10:
                 System.out.println("Bien");
                 break;
             default:
@@ -266,8 +244,7 @@ public class Ejercicios {
     }
 
     /**
-     * 12. Leer un número y mostrar su cuadrado,
-     * repetir el proceso hasta que se introduzca un numero negativo
+     * 12. Leer un número y mostrar su cuadrado, repetir el proceso hasta que se introduzca un numero negativo.
      */
     public static void Ejercicio_12() {
         System.out.println("Ejercicio 12\n");
@@ -285,9 +262,8 @@ public class Ejercicios {
     }
 
     /**
-     * 13.Pedir números hasta que se teclee un 0,
-     * mostrar la suma de todos los números introducidos.
-     * Usando solo uno de los bucles mostrados en clase
+     * 13.Pedir números hasta que se teclee un 0, mostrar la suma de todos los números introducidos.
+     * Usando solo uno de los bucles mostrados en clase.
      */
     public static void Ejercicio_13() {
         System.out.println("Ejercicio 13\n");
@@ -304,14 +280,13 @@ public class Ejercicios {
     }
 
     /**
-     * 14.Pedir 15 números y escribir la suma total.
-     * Usando solo uno de los bucles mostrados en clase
+     * 14.Pedir 15 números y escribir la suma total. Usando solo uno de los bucles mostrados en clase.
      */
     public static void Ejercicio_14() {
         System.out.println("Ejercicio 14\n");
         int suma = 0;
-        for (int i = 1; i <= 15; i++) {
-            System.out.print("Número " + i + ": ");
+        for (int contador = 1; contador <= 15; contador++) {
+            System.out.print("Número " + contador + ": ");
             suma += scanner.nextInt();
         }
         System.out.println("Suma de los 15 números: " + suma);
@@ -320,8 +295,7 @@ public class Ejercicios {
     }
 
     /**
-     * 15.Pide un número (que debe estar entre 0 y 10) y
-     * mostrar la tabla de multiplicar de dicho número
+     * 15.Pide un número (que debe estar entre 0 y 10) y mostrar la tabla de multiplicar de dicho número.
      */
     public static void Ejercicio_15() {
         System.out.println("Ejercicio 15\n");
@@ -330,15 +304,14 @@ public class Ejercicios {
         System.out.println("Tabla de multiplicar de " + numeroX);
 
         // Aplico un for para que cuente y hacer que multiplique
-        for (int i = 0; i <= 10; i++) {
-            System.out.printf("%n x %i = %n%i", numeroX, i, numeroX * i);
+        for (int contador = 0; contador <= 10; contador++) {
+            System.out.printf("%d x %d = %d%n", numeroX, contador, numeroX * contador);
         }
         System.out.println();
     }
 
     /**
-     * 16.Determinar a cuánto es igual la suma de los elementos
-     * de la serie de Fibonacci entre 0 y 100.
+     * 16.Determinar a cuánto es igual la suma de los elementos de la serie de Fibonacci entre 0 y 100.
      */
     public static void Ejercicio_16() {
         System.out.println("Ejercicio 16\n");
@@ -382,14 +355,13 @@ public class Ejercicios {
     }
 
     /**
-     * 18.Determinar cuántos elementos de la serie de
-     * Fibonacci se encuentran entre 1000 y 2000.
+     * 18.Determinar cuántos elementos de la serie de Fibonacci se encuentran entre 1000 y 2000.
      */
     public static void Ejercicio_18() {
         System.out.println("Ejercicio 18\n");
         int numeroAnterior = 0, numeroActual = 1, cantidadEnRango = 0;
 
-        // Genera numeros Fibonacci hasta que superen 2000
+        // Genera números Fibonacci hasta que superen 2000
         while (numeroAnterior <= 2000) {
             // Cuenta los que están en el rango [1000, 2000]
             if (numeroAnterior >= 1000)
@@ -407,15 +379,15 @@ public class Ejercicios {
     public static void Ejercicio_19() {
         System.out.println("Ejercicio 19\n");
         System.out.print("Introduce un número: ");
+        // * Probe con 500,000
         int numeroX = scanner.nextInt();
 
         /**
-         * //! Aqui es necesario usar algo como el BigInteger de C#
+         * ! Aquí es necesario usar algo como el BigInteger de C#
          * System.Numerics.BigInteger;
          * Casualmente se llama igual en Java, esto es para que cuando pruebe con un
-         * numero grande
-         * funcione con un limite de capacidad mas grande que el de un entero normal y
-         * no colapse
+         * numero grande funcione con un limite de capacidad mas grande que el de un
+         * entero normal sin dar error.
          */
         BigInteger factorialGrande = BigInteger.ONE;
 
@@ -423,17 +395,12 @@ public class Ejercicios {
         for (int contador = 2; contador <= numeroX; contador++) {
             factorialGrande = factorialGrande.multiply(BigInteger.valueOf(contador));
         }
-        /**
-         * Cual es el limite de BigInteger????
-         * * Probe con 100000 y funciono
-         */
         System.out.println(numeroX + "! = " + factorialGrande);
         System.out.println();
     }
 
     /**
-     * 20.Leer un número y calcularles la factorial a todos
-     * los enteros comprendidos entre 1 y el número leído.
+     * 20.Leer un número y calcularles la factorial a todos los enteros comprendidos entre 1 y el número leído.
      ** Reutilice mi código anterior y le quite algunos comentarios
      */
     public static void Ejercicio_20() {
@@ -447,11 +414,10 @@ public class Ejercicios {
          * calcula el factorial de los enteros comprendidos entre 1 y numeroX.
          */
         for (int contador1 = 1; contador1 <= numeroX; contador1++) {
-            // Uso BigInteger para manejar numeros enteros mas grandes
+            // Uso BigInteger para manejar números enteros mas grandes
             BigInteger factorialGrande = BigInteger.ONE;
 
-            // El mismo codigo de antes pero usando el contador1 inicial para establecer el
-            // hasta
+            // El mismo código de antes pero usando el contador1 inicial para establecer el
             for (int contador2 = 2; contador2 <= contador1; contador2++) {
                 factorialGrande = factorialGrande.multiply(BigInteger.valueOf(contador2));
             }
@@ -469,7 +435,7 @@ public class Ejercicios {
         System.out.print("Introduce un número: ");
         int numeroX = scanner.nextInt();
 
-        // Uso BigInteger para manejar numeros enteros mas grandes
+        // Uso BigInteger para manejar números enteros mas grandes
         BigInteger factorialSuma = BigInteger.ZERO;
 
         // For para calcular la suma de los factoriales de 1 a numeroX
@@ -481,11 +447,9 @@ public class Ejercicios {
             for (int contador2 = 2; contador2 <= contador1; contador2++) {
                 factorialGrande = factorialGrande.multiply(BigInteger.valueOf(contador2));
             }
-
             // Sumo el factorial al acumulador
             factorialSuma = factorialSuma.add(factorialGrande);
         }
-
         // Calculo el promedio entero dividiendo la suma entre numeroX
         BigInteger factorialPromedio = factorialSuma.divide(BigInteger.valueOf(numeroX));
 
@@ -494,14 +458,16 @@ public class Ejercicios {
         System.out.println();
     }
 
-    /** 22.Leer un número entero y calcular a cuánto es igual la sumatoria de todas
-     * las factoriales de los números comprendidos entre 1 y el número leído */
+    /**
+     * 22.Leer un número entero y calcular a cuánto es igual la sumatoria de todas
+     * las factoriales de los números comprendidos entre 1 y el número leído
+     */
     public static void Ejercicio_22() {
         System.out.println("Ejercicio 22\n");
         System.out.print("Introduce un número: ");
         int numeroX = scanner.nextInt();
 
-        // Uso BigInteger para manejar numeros enteros mas grandes
+        // Uso BigInteger para manejar números enteros mas grandes
         BigInteger factorialSuma = BigInteger.ZERO;
 
         // For para calcular la suma de los factoriales de 1 a numeroX
