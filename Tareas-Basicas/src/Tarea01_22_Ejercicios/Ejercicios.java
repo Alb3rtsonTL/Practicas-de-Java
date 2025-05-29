@@ -1,5 +1,5 @@
 //* Package donde se encuentran los archivos del proyecto
-package Tarea01_Bases_22Ejercicios;
+package Tarea01_22_Ejercicios;
 
 import java.math.BigInteger;
 import java.time.LocalDateTime;
