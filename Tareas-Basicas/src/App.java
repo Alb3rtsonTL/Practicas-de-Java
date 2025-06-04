@@ -1,4 +1,4 @@
-import Tarea01_22_Ejercicios.Ejercicios;
+// import Tarea01_22_Ejercicios.Ejercicios;
 import Tarea02_POO.MainTarea02;
 
 public class App {

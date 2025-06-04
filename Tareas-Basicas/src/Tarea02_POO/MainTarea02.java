@@ -83,12 +83,12 @@ public class MainTarea02 {
         System.out.println("\n Conversión y operaciones con monedas ===::>");
         Moneda moneda1 = new Moneda(100, "USD");
         Moneda moneda2 = new Moneda(85,  "EUR");
-        Moneda moneda3 = new Moneda(1000,"JPY");
-        Moneda moneda4 = new Moneda(75,  "GBP");
+        // Moneda moneda3 = new Moneda(1000,"JPY");
+        // Moneda moneda4 = new Moneda(75,  "GBP");
         Moneda moneda5 = new Moneda(200, "USD");
         Moneda moneda6 = new Moneda(50,  "EUR");
-        Moneda moneda7 = new Moneda(500, "JPY");
-        Moneda moneda8 = new Moneda(30,  "GBP");
+        // Moneda moneda7 = new Moneda(500, "JPY");
+        // Moneda moneda8 = new Moneda(30,  "GBP");
 
         // Conversión
         System.out.printf("100 USD a EUR: %.2f EUR\n", moneda1.convertir("EUR"));
