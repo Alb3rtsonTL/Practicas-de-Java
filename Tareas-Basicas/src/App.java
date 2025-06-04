@@ -1,3 +1,4 @@
+import Tarea02_POO.MainTarea02;
 import Tarea01_22_Ejercicios.Ejercicios;
 
 public class App {
@@ -5,8 +6,8 @@ public class App {
         System.out.println("Cree un Package para poner cada practica con sus ejercicios dentro de su src correspondiente y después hago la llamada desde el método Main fuera del Package.");
         System.err.println("Para adelantarme un poco. \n");
         
-        // Llamada al método con el ejercicio
-        // Para ver otro ejercicio pon el numero que le corresponde ejemplo Ejercicios.Ejercicio_NumeroEjercicio()
-        Ejercicios.Ejercicio_22();
+        // Llamada al método principal de la clase para la tarea
+        // Ejercicios.Ejercicio_01(); // Llamada al Ejercicios_01 de la tarea 01
+        MainTarea02.main(); // Llamada al main de la tarea 02 POO
     }
 }
