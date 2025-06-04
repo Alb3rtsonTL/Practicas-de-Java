@@ -1,7 +1,7 @@
 package Tarea02_POO;
 
 /** Clase Main Para arrancar las clases. */
-public class Main {
+public class MainTarea02 {
     public static void main() throws InterruptedException {
         // 1. Empleados con Roles
         Empleado gerente       = new Empleado("Juan D.",    "García", 45, 85000, "Gerencia");
