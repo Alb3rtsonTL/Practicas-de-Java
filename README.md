@@ -3,7 +3,6 @@
 Este repositorio contiene todas las prácticas desarrolladas durante la asignatura **Programación I** (Java). Está pensado como un punto centralizado donde se encuentra cada ejercicio ordenado en carpetas numeradas y nombradas según su enunciado.
 
 Cada carpeta incluye:
-
 - Los archivos `.java` con las clases y métodos para resolver el enunciado.
 - Un breve comentario al inicio del código indicando el objetivo del ejercicio.
 - Instrucciones de compilación y ejecución (cuando sea necesario).

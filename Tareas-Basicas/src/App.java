@@ -1,5 +1,5 @@
-// import Tarea01_22_Ejercicios.Ejercicios;
 import Tarea02_POO.MainTarea02;
+import Tarea01_22_Ejercicios.Ejercicios;
 
 public class App {
     public static void main(String[] args) throws Exception {
