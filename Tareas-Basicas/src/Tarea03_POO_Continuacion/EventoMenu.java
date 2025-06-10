@@ -16,13 +16,13 @@ public class EventoMenu {
 
         // Ejemplos por defecto:
         try {
-            // Evento 1: Concierto de Rock sin lugar especificado inicialmente
+            // Evento 1 Concierto de Rock sin lugar especificado inicialmente
             Evento eventoEj1 = new Evento("Concierto Rock Live", LocalDate.parse("15/06/2025", formatoEntrada));
             eventoEj1.agregarInvitado("Ana Martínez");
             eventoEj1.agregarInvitado("Carlos Gómez");
             // Lugar predeterminado: "Sin especificar"
 
-            // Evento 2: Feria de Ciencias con lugar
+            // Evento 2 Feria de Ciencias con lugar
             Evento eventoEj2 = new Evento("Feria de Ciencias 2025", LocalDate.parse("04/07/2025", formatoEntrada),
                     "Auditorio Central");
             List<String> listaInvitados2 = new ArrayList<>();
