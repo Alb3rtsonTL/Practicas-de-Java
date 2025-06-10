@@ -3,28 +3,34 @@ package Tarea03_POO_Continuacion;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- * Clase que representa un menú para gestionar productos.
- * Permite registrar productos, agregar stock, vender productos y mostrar detalles.
- */
 public class ProductoMenu {
     public static void menu() {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Producto> productosRegistrados = new ArrayList<>();
         boolean salir = false;
 
-        // Inicializar algunos productos
-        Producto producto1 = new Producto("Diclofenac S 100 Blister", 35.00);
-        producto1.incrementarStock(18); // cantidad 18 blisters
+        // Inicializar algunos productos con descripción y fecha de vencimiento
+        Producto producto1 = new Producto(
+            "Diclofenac S 100 Blister",
+            35.00,
+            "Antiinflamatorio en blíster de 100mg",
+            "31/12/2025"
+        );
+        producto1.incrementarStock(18);
 
-        Producto producto2 = new Producto("Acetaminofen MK Niños Suspension", 800.00);
-        producto2.incrementarStock(5); // cantidad 5 unidades
+        Producto producto2 = new Producto(
+            "Acetaminofen MK Niños Suspension",
+            800.00,
+            "Suspensión para niños, 120ml",
+            "15/11/2024"
+        );
+        producto2.incrementarStock(5);
 
-        // Guardo los productos en la lista
         productosRegistrados.add(producto1);
         productosRegistrados.add(producto2);
 
-        while (!salir) { // Bucle del menú
+        // Bucle del menú
+        while (!salir) {
             System.out.println("---------------------------------------------------------------");
             System.out.println(" Gestión de Productos");
             System.out.println("---------------------------------------------------------------");
@@ -39,21 +45,27 @@ public class ProductoMenu {
             scanner.nextLine();
 
             switch (opSeleccionada) {
-                case 1: // Registro un nuevo producto
+                case 1:
+                    // Registrar un nuevo producto
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Registrar nuevo producto");
                     System.out.println("---------------------------------------------------------------");
-                    System.out.print(" Ingrese nombre del producto: ") ;
+                    System.out.print(" Ingrese nombre del producto: ");
                     String nombreNuevo = scanner.nextLine();
-                    System.out.print(" Ingrese precio unitario: ") ;
+                    System.out.print(" Ingrese precio unitario: ");
                     double precioNuevo = scanner.nextDouble();
                     scanner.nextLine();
-                    Producto productoNuevo = new Producto(nombreNuevo, precioNuevo);
+                    System.out.print(" Ingrese descripción del producto: ");
+                    String descripcionNueva = scanner.nextLine();
+                    System.out.print(" Ingrese fecha de vencimiento (dd/MM/yyyy): ");
+                    String fechaVencimientoNueva = scanner.nextLine();
+                    Producto productoNuevo = new Producto(nombreNuevo, precioNuevo, descripcionNueva, fechaVencimientoNueva);
                     productosRegistrados.add(productoNuevo);
                     System.out.println(" Producto \"" + nombreNuevo + "\" registrado correctamente.");
                     break;
 
-                case 2: // Agrego la cantidad de un producto
+                case 2:
+                    // Agregar cantidad de un producto
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Agregar cantidad de un producto");
                     System.out.println("---------------------------------------------------------------");
@@ -81,7 +93,7 @@ public class ProductoMenu {
                     scanner.nextLine();
                     break;
 
-                case 3: // Paso lista de los productos y la cantidad que queda de cada uno
+                case 3:
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Lista de productos:");
                     System.out.println("---------------------------------------------------------------");
@@ -108,7 +120,8 @@ public class ProductoMenu {
                     scanner.nextLine();
                     break;
 
-                case 4: // Paso la lista de todos los productos registrados
+                case 4:
+                    // Paso la lista de todos los productos registrados
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Inventario de Productos");
                     System.out.println("---------------------------------------------------------------");
@@ -121,18 +134,21 @@ public class ProductoMenu {
                     }
                     break;
 
-                case 5: // Indico cuantos productos hay
+                case 5:
+                    // Indico cuantos productos hay
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Total de productos en el sistema: " + Producto.obtenerTotalProductos());
                     break;
 
-                case 0: // Salgo del menú
+                case 0:
+                    // Salgo del menú
                     salir = true;
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Saliendo del sistema de productos...");
                     break;
 
-                default: // Si la opción no existe
+                default:
+                    // Si la opción no existe
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" La opción no existe. Esa opción no existe en el menú..]\n");
                     break;

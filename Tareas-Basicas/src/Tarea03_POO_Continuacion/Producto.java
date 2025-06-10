@@ -10,22 +10,34 @@ public class Producto {
     private double precioUnitario;
     private int cantidadProducto;
     private static int totalProductos = 0;
+    private String descripcion;
+    private String fechaVencimiento;
 
-    // Constructor que recibe nombreProducto y precioUnitario; cantidadProducto
-    // inicia en 0.
-    public Producto(String nombreProducto, double precioUnitario) {
+    // Constructor actualizado
+    public Producto(String nombreProducto, double precioUnitario, String descripcion, String fechaVencimiento) {
         this.nombreProducto = nombreProducto;
         this.precioUnitario = precioUnitario;
         this.cantidadProducto = 0;
+        this.descripcion = descripcion;
+        this.fechaVencimiento = fechaVencimiento;
         totalProductos++;
     }
 
-    // Getters para el nombre, precio y cantidad del producto
+    // Constructor anterior para compatibilidad
+    public Producto(String nombreProducto, double precioUnitario) {
+        this(nombreProducto, precioUnitario, "", "");
+    }
+
+    // Getters para el nombre, precio, cantidad, descripción y fecha de vencimiento
     public String getNombreProducto() { return nombreProducto;}
 
     public double getPrecioUnitario() { return precioUnitario; }
 
     public int getCantidadProducto() { return cantidadProducto; }
+
+    public String getDescripcion() { return descripcion; }
+
+    public String getFechaVencimiento() { return fechaVencimiento; }
 
     // Método para incrementar el stock
     public void incrementarStock(int cantidadAgregar) {
@@ -54,6 +66,8 @@ public class Producto {
     public void mostrarDetallesProducto() {
         DecimalFormat formatoPrecio = new DecimalFormat("#,##0.00");
         System.out.println(" Producto: " + nombreProducto);
+        System.out.println(" Descripción: " + descripcion);
+        System.out.println(" Fecha de vencimiento: " + fechaVencimiento);
         System.out.println(" Precio unitario: $" + formatoPrecio.format(precioUnitario));
         System.out.println(" Stock disponible: " + cantidadProducto);
         System.out.println("---------------------------------------------------------------");
