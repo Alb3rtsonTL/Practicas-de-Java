@@ -2,15 +2,15 @@ package Tarea03_POO_Continuacion;
 
 import java.util.Scanner;
 
+/* Clase del menu general para la Tarea 03 POO Continuación  */
 public class MenuGeneral {
-    public static void MenuTarea03(){
-        
+    public static void MenuTarea03() {
+
         Scanner scanner = new Scanner(System.in);
         boolean salir = false;
 
-        // Menu principal para la tarea 03 POO Continuación
-        while (!salir) {
-            System.out.println("---------------------------------------------------------------");
+        while (!salir) { // Menu principal
+            System.out.println("\n---------------------------------------------------------------");
             System.out.println(" Menú General de Gestores");
             System.out.println("---------------------------------------------------------------");
             System.out.println(" 1. Gestor de Productos");
@@ -31,16 +31,17 @@ public class MenuGeneral {
                 case 3:
                     EstudianteMenu.menu();
                     break;
-                case 0:
+                case 0: // Salgo del menú
                     salir = true;
-                    System.out.println("Saliendo del sistema general...");
+                    System.out.println("---------------------------------------------------------------");
+                    System.out.println(" Saliendo del sistema de productos...");
                     break;
-                default:
-                    System.out.println("Opción no válida, La opción elegida no existe.");
+                default: // Si la opción no existe
+                    System.out.println("---------------------------------------------------------------");
+                    System.out.println(" La opción no existe. Esa opción no existe en el menú..]\n");
                     break;
             }
         }
-
         scanner.close();
     }
 }
