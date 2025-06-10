@@ -3,6 +3,10 @@ package Tarea03_POO_Continuacion;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase que representa un estudiante con sus datos y materias inscritas.
+ * Permite registrar estudiantes, agregar materias y mostrar detalles.
+ */
 public class Estudiante {
     private String nombreEstudiante;
     private String matriculaEstudiante;

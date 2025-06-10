@@ -5,6 +5,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase que representa un evento con sus datos y lista de invitados.
+ * Permite registrar eventos, agregar invitados y mostrar detalles.
+ */
 public class Evento {
     private String nombreEvento;
     private LocalDate fechaEvento;
@@ -12,8 +16,7 @@ public class Evento {
     private List<String> invitados;
     private static int totalEventos = 0;
 
-    // Constructor que recibe solo el nombreEvento y fechaEvento; para cuando el
-    // lugarEvento esta sin especificar
+    // Constructor que recibe solo el nombreEvento y fechaEvento; para cuando lugarEvento esta sin especificar
     public Evento(String nombreEvento, LocalDate fechaEvento) {
         this.nombreEvento = nombreEvento;
         this.fechaEvento = fechaEvento;
@@ -22,8 +25,7 @@ public class Evento {
         totalEventos++;
     }
 
-    // Constructor sobrecargado este recibe el nombreEvento, la fechaEvento y
-    // lugarEvento
+    // Constructor sobrecargado este recibe el nombreEvento, la fechaEvento y lugarEvento
     public Evento(String nombreEvento, LocalDate fechaEvento, String lugarEvento) {
         this.nombreEvento = nombreEvento;
         this.fechaEvento = fechaEvento;
@@ -56,7 +58,7 @@ public class Evento {
                 System.out.println("   - " + inv);
             }
         }
-        System.out.println("---------------------------------");
+        System.out.println("---------------------------------------------------------------");
     }
 
     // Getters para obtener los datos del evento

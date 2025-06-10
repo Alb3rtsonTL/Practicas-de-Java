@@ -1,7 +1,10 @@
 package Tarea03_POO_Continuacion;
-
 import java.text.DecimalFormat;
 
+/**
+ * Clase que representa un producto con sus datos y stock.
+ * Permite registrar productos, incrementar stock, procesar ventas y mostrar detalles.
+ */
 public class Producto {
     private String nombreProducto;
     private double precioUnitario;
