@@ -3,6 +3,10 @@ package Tarea03_POO_Continuacion;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Clase que representa un menú para gestionar productos.
+ * Permite registrar productos, agregar stock, vender productos y mostrar detalles.
+ */
 public class ProductoMenu {
     public static void menu() {
         Scanner scanner = new Scanner(System.in);
@@ -11,17 +15,16 @@ public class ProductoMenu {
 
         // Inicializar algunos productos
         Producto producto1 = new Producto("Diclofenac S 100 Blister", 35.00);
-        producto1.incrementarStock(18); // cantidad inicial: 18 blisters
+        producto1.incrementarStock(18); // cantidad 18 blisters
 
         Producto producto2 = new Producto("Acetaminofen MK Niños Suspension", 800.00);
-        producto2.incrementarStock(5); // cantidad inicial: 5 unidades
+        producto2.incrementarStock(5); // cantidad 5 unidades
 
         // Guardo los productos en la lista
         productosRegistrados.add(producto1);
         productosRegistrados.add(producto2);
 
-        // Bucle del menú
-        while (!salir) {
+        while (!salir) { // Bucle del menú
             System.out.println("---------------------------------------------------------------");
             System.out.println(" Gestión de Productos");
             System.out.println("---------------------------------------------------------------");
@@ -36,8 +39,7 @@ public class ProductoMenu {
             scanner.nextLine();
 
             switch (opSeleccionada) {
-                case 1:
-                    // Registrar un nuevo producto
+                case 1: // Registro un nuevo producto
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Registrar nuevo producto");
                     System.out.println("---------------------------------------------------------------");
@@ -51,8 +53,7 @@ public class ProductoMenu {
                     System.out.println(" Producto \"" + nombreNuevo + "\" registrado correctamente.");
                     break;
 
-                case 2:
-                    // Agregar cantidad de un producto
+                case 2: // Agrego la cantidad de un producto
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Agregar cantidad de un producto");
                     System.out.println("---------------------------------------------------------------");
@@ -80,7 +81,7 @@ public class ProductoMenu {
                     scanner.nextLine();
                     break;
 
-                case 3:
+                case 3: // Paso lista de los productos y la cantidad que queda de cada uno
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Lista de productos:");
                     System.out.println("---------------------------------------------------------------");
@@ -107,8 +108,7 @@ public class ProductoMenu {
                     scanner.nextLine();
                     break;
 
-                case 4:
-                    // Paso la lista de todos los productos registrados
+                case 4: // Paso la lista de todos los productos registrados
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Inventario de Productos");
                     System.out.println("---------------------------------------------------------------");
@@ -121,21 +121,18 @@ public class ProductoMenu {
                     }
                     break;
 
-                case 5:
-                    // Indico cuantos productos hay
+                case 5: // Indico cuantos productos hay
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Total de productos en el sistema: " + Producto.obtenerTotalProductos());
                     break;
 
-                case 0:
-                    // Salgo del menú
+                case 0: // Salgo del menú
                     salir = true;
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Saliendo del sistema de productos...");
                     break;
 
-                default:
-                    // Si la opción no existe
+                default: // Si la opción no existe
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" La opción no existe. Esa opción no existe en el menú..]\n");
                     break;

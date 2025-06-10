@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Clase que representa un menú para gestionar estudiantes.
+ * Permite registrar estudiantes, agregar materias y mostrar detalles.
+ */
 public class EstudianteMenu {
     public static void menu() {
         Scanner scanner = new Scanner(System.in);
@@ -30,11 +34,10 @@ public class EstudianteMenu {
         estudiantesRegistrados.add(estEj1);
         estudiantesRegistrados.add(estEj2);
 
-        // Bucle del menú
-        while (!salir) {
-            System.out.println("-----------------------------------------------");
+        while (!salir) { // Bucle del menú
+            System.out.println("---------------------------------------------------------------");
             System.out.println(" Gestión de Estudiantes");
-            System.out.println("-----------------------------------------------");
+            System.out.println("---------------------------------------------------------------");
             System.out.println(" 1. Registrar estudiante -(sin carrera)");
             System.out.println(" 2. Registrar estudiante -(con carrera)");
             System.out.println(" 3. Agregar materias a un estudiante");
@@ -46,10 +49,9 @@ public class EstudianteMenu {
             scanner.nextLine();
 
             switch (opSeleccionada) {
-                case 1:
-                    // Registro un estudiante sin carrera
+                case 1: // Registro un estudiante sin carrera
                     System.out.println("---------------------------------------------------------------");
-                    System.out.println(" Registrar a un estudiante (sin carrera)");
+                    System.out.println(" Registrar a un estudiante sin asignar la carrera");
                     System.out.println("---------------------------------------------------------------");
                     System.out.print(" Nombre del estudiante: ");
                     String nombre1 = scanner.nextLine();
@@ -57,13 +59,12 @@ public class EstudianteMenu {
                     String matricula1 = scanner.nextLine();
                     Estudiante estudiante1 = new Estudiante(nombre1, matricula1);
                     estudiantesRegistrados.add(estudiante1);
-                    System.out.println(" Estudiante \"" + nombre1 + "\" registrado (sin carrera).\n");
+                    System.out.println(" Estudiante \"" + nombre1 + "\" registrado.\n");
                     break;
 
-                case 2:
-                    // Registro un estudiante con carrera
+                case 2: // Registro un estudiante con carrera
                     System.out.println("---------------------------------------------------------------");
-                    System.out.println(" Registrar estudiante (con carrera)");
+                    System.out.println(" Registrar estudiante");
                     System.out.println("---------------------------------------------------------------");
                     System.out.print(" Nombre del estudiante: ");
                     String nombre2 = scanner.nextLine();
@@ -73,11 +74,10 @@ public class EstudianteMenu {
                     String carrera2 = scanner.nextLine();
                     Estudiante estudiante2 = new Estudiante(nombre2, matricula2, carrera2);
                     estudiantesRegistrados.add(estudiante2);
-                    System.out.println(" Estudiante \"" + nombre2 + "\" registrado (con carrera).\n");
+                    System.out.println(" Estudiante \"" + nombre2 + "\" registrado.\n");
                     break;
 
-                case 3:
-                    // Agrego materias a un estudiante que especifique el usuario
+                case 3: // Agrego materias a un estudiante que especifique el usuario
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Agregar materias a un estudiante");
                     System.out.println("---------------------------------------------------------------");
@@ -127,8 +127,7 @@ public class EstudianteMenu {
                     }
                     break;
 
-                case 4:
-                    // Muestro todos los estudiantes
+                case 4: // Muestro todos los estudiantes
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Lista de estudiantes registrados");
                     System.out.println("---------------------------------------------------------------");
@@ -142,26 +141,20 @@ public class EstudianteMenu {
 
                     break;
 
-                case 5:
-                    // Muestro el total de estudiantes creados
+                case 5: // Muestro el total de estudiantes creados
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Total de estudiantes creados: " + Estudiante.obtenerTotalEstudiantes());
-                    System.out.println("---------------------------------------------------------------");
                     break;
 
-                case 0:
-                    // Salgo del menú
+                case 0: // Salgo del menú
                     salir = true;
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" Saliendo del gestor de estudiantes...\n");
-                    System.out.println("---------------------------------------------------------------");
                     break;
 
-                default:
-                    // Si la opción no existe
+                default: // Si la opción no existe
                     System.out.println("---------------------------------------------------------------");
                     System.out.println(" La opción no existe. Esa opción no existe en el menú..");
-                    System.out.println("---------------------------------------------------------------");
                     break;
             }
         }
