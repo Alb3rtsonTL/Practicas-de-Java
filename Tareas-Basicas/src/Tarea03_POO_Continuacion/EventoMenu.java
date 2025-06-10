@@ -18,26 +18,35 @@ public class EventoMenu {
         boolean salir = false;
         DateTimeFormatter formatoEntrada = DateTimeFormatter.ofPattern("d/M/yyyy");
 
-        try { // Ejemplos por defecto
-              // Evento 1 Concierto de Rock sin lugar especificado inicialmente
-            Evento eventoEj1 = new Evento("Concierto Rock Live", LocalDate.parse("15/06/2025", formatoEntrada));
-            eventoEj1.agregarInvitado("Ana Martínez");
-            eventoEj1.agregarInvitado("Carlos Gómez");
-            // Lugar predeterminado: "Sin especificar"
+        try {
+            // Evento 1
+            Evento eventoEj1 = new Evento(
+                "Concierto Cristiano",
+                LocalDate.parse("15/06/2025", formatoEntrada),
+                "Concierto de Redimi2, Alexezurdo y Funky.",
+                "Redimi2 Producciones"
+            );
+            eventoEj1.agregarInvitado("Alexandra López");
+            eventoEj1.agregarInvitado("Casandra Terrero López");
+            eventoEj1.agregarInvitado("España Terrero López");
 
-            // Evento 2 Feria de Ciencias con lugar
-            Evento eventoEj2 = new Evento("Feria de Ciencias 2025", LocalDate.parse("04/07/2025", formatoEntrada),
-                    "Auditorio Central");
+            // Evento 2
+            Evento eventoEj2 = new Evento(
+                "ITLA DevTech Fest 2025",
+                LocalDate.parse("04/07/2025", formatoEntrada),
+                "Auditorio 1",
+                "Exposición de proyectos científicos de estudiantes.",
+                "ITLA"
+            );
             List<String> listaInvitados2 = new ArrayList<>();
-            listaInvitados2.add("Laura Fernández");
-            listaInvitados2.add("Pedro López");
-            listaInvitados2.add("María Ruiz");
+            listaInvitados2.add("Robert Ramirez Feliz");
+            listaInvitados2.add("Daniel del Carmen Terrero");
             eventoEj2.agregarListaInvitados(listaInvitados2);
 
             eventosRegistrados.add(eventoEj1);
             eventosRegistrados.add(eventoEj2);
         } catch (DateTimeParseException e) {
-            System.out.println("Error al parsear fecha de ejemplo: " + e.getMessage());
+            System.out.println("Error al convertir la fecha " + e.getMessage());
         }
 
         while (!salir) { // Este es el bucle para el menu
@@ -65,10 +74,14 @@ public class EventoMenu {
                     try {
                         System.out.print(" Nombre del evento: ");
                         String nombreE1 = scanner.nextLine();
+                        System.out.print(" Descripción del evento: ");
+                        String descripcionE1 = scanner.nextLine();
+                        System.out.print(" Organizador del evento: ");
+                        String organizadorE1 = scanner.nextLine();
                         System.out.print(" Fecha (d/M/yyyy): ");
                         String textoFecha1 = scanner.nextLine();
                         LocalDate fechaE1 = LocalDate.parse(textoFecha1, formatoEntrada);
-                        Evento eventoNuevo1 = new Evento(nombreE1, fechaE1);
+                        Evento eventoNuevo1 = new Evento(nombreE1, fechaE1, descripcionE1, organizadorE1);
                         eventosRegistrados.add(eventoNuevo1);
                         System.out.println(" Evento \"" + nombreE1 + "\" creado sin asignar un lugar.");
                     } catch (DateTimeParseException e) {
@@ -83,12 +96,16 @@ public class EventoMenu {
                     try {
                         System.out.print(" Nombre del evento: ");
                         String nombreE2 = scanner.nextLine();
+                        System.out.print(" Descripción del evento: ");
+                        String descripcionE2 = scanner.nextLine();
+                        System.out.print(" Organizador del evento: ");
+                        String organizadorE2 = scanner.nextLine();
                         System.out.print(" Fecha (d/M/yyyy): ");
                         String textoFecha2 = scanner.nextLine();
                         LocalDate fechaE2 = LocalDate.parse(textoFecha2, formatoEntrada);
                         System.out.print(" Lugar del evento: ");
                         String lugarE2 = scanner.nextLine();
-                        Evento eventoNuevo2 = new Evento(nombreE2, fechaE2, lugarE2);
+                        Evento eventoNuevo2 = new Evento(nombreE2, fechaE2, lugarE2, descripcionE2, organizadorE2);
                         eventosRegistrados.add(eventoNuevo2);
                         System.out.println(" Evento \"" + nombreE2 + "\" creado.");
                     } catch (DateTimeParseException e) {
