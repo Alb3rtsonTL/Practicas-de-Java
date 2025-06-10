@@ -18,17 +18,11 @@ public class Producto {
     }
 
     // Getters para el nombre, precio y cantidad del producto
-    public String getNombreProducto() {
-        return nombreProducto;
-    }
+    public String getNombreProducto() { return nombreProducto;}
 
-    public double getPrecioUnitario() {
-        return precioUnitario;
-    }
+    public double getPrecioUnitario() { return precioUnitario; }
 
-    public int getCantidadProducto() {
-        return cantidadProducto;
-    }
+    public int getCantidadProducto() { return cantidadProducto; }
 
     // Método para incrementar el stock
     public void incrementarStock(int cantidadAgregar) {
