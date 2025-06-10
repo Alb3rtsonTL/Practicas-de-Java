@@ -15,22 +15,28 @@ public class Evento {
     private String lugarEvento;
     private List<String> invitados;
     private static int totalEventos = 0;
+    private String descripcion;
+    private String organizador;
 
-    // Constructor que recibe solo el nombreEvento y fechaEvento; para cuando lugarEvento esta sin especificar
-    public Evento(String nombreEvento, LocalDate fechaEvento) {
+    // Constructor que recibe solo el nombreEvento y fechaEvento
+    public Evento(String nombreEvento, LocalDate fechaEvento, String descripcion, String organizador) {
         this.nombreEvento = nombreEvento;
         this.fechaEvento = fechaEvento;
         this.lugarEvento = "Sin especificar";
         this.invitados = new ArrayList<>();
+        this.descripcion = descripcion;
+        this.organizador = organizador;
         totalEventos++;
     }
 
-    // Constructor sobrecargado este recibe el nombreEvento, la fechaEvento y lugarEvento
-    public Evento(String nombreEvento, LocalDate fechaEvento, String lugarEvento) {
+    // Constructor sobrecargado que recibe nombreEvento, fechaEvento, lugarEvento, descripcion, organizador
+    public Evento(String nombreEvento, LocalDate fechaEvento, String lugarEvento, String descripcion, String organizador) {
         this.nombreEvento = nombreEvento;
         this.fechaEvento = fechaEvento;
         this.lugarEvento = lugarEvento;
         this.invitados = new ArrayList<>();
+        this.descripcion = descripcion;
+        this.organizador = organizador;
         totalEventos++;
     }
 
@@ -48,6 +54,8 @@ public class Evento {
     public void mostrarDetallesEvento() {
         DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         System.out.println(" Evento: " + nombreEvento);
+        System.out.println(" Descripción: " + descripcion);
+        System.out.println(" Organizador: " + organizador);
         System.out.println(" Fecha: " + fechaEvento.format(formatoFecha));
         System.out.println(" Lugar: " + lugarEvento);
         System.out.println(" Listado de invitados:");
@@ -62,17 +70,11 @@ public class Evento {
     }
 
     // Getters para obtener los datos del evento
-    public LocalDate getFechaEvento() {
-        return fechaEvento;
-    }
-
-    public String getLugarEvento() {
-        return lugarEvento;
-    }
-
-    public String getNombreEvento() {
-        return nombreEvento;
-    }
+    public LocalDate getFechaEvento() { return fechaEvento; }
+    public String getLugarEvento() { return lugarEvento; }
+    public String getNombreEvento() { return nombreEvento; }
+    public String getDescripcion() { return descripcion; }
+    public String getOrganizador() { return organizador; }
 
     // Método estático que devuelve cuántos eventos se han creado
     public static int obtenerTotalEventos() {
