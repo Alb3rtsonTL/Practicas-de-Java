@@ -22,14 +22,11 @@ public class MenuGeneral {
             scanner.nextLine();
 
             switch (opSeleccionada) {
-                case 1:
-                    ProductoMenu.menu();
+                case 1: ProductoMenu.menu();
                     break;
-                case 2:
-                    EventoMenu.menu();
+                case 2: EventoMenu.menu();
                     break;
-                case 3:
-                    EstudianteMenu.menu();
+                case 3: EstudianteMenu.menu();
                     break;
                 case 0: // Salgo del menú
                     salir = true;
@@ -38,7 +35,7 @@ public class MenuGeneral {
                     break;
                 default: // Si la opción no existe
                     System.out.println("---------------------------------------------------------------");
-                    System.out.println(" La opción no existe. Esa opción no existe en el menú..]\n");
+                    System.out.println(" La opción no existe en el menú..]\n");
                     break;
             }
         }

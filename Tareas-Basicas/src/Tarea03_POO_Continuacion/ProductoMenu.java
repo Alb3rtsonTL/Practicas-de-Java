@@ -150,7 +150,7 @@ public class ProductoMenu {
                 default:
                     // Si la opción no existe
                     System.out.println("---------------------------------------------------------------");
-                    System.out.println(" La opción no existe. Esa opción no existe en el menú..]\n");
+                    System.out.println(" La opción no existe en el menú..]\n");
                     break;
             }
         }

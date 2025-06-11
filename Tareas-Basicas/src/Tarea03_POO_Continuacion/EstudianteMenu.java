@@ -154,7 +154,7 @@ public class EstudianteMenu {
 
                 default: // Si la opción no existe
                     System.out.println("---------------------------------------------------------------");
-                    System.out.println(" La opción no existe. Esa opción no existe en el menú..");
+                    System.out.println(" La opción no existe en el menú..");
                     break;
             }
         }
