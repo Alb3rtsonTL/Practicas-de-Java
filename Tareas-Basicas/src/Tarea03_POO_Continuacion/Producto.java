@@ -70,7 +70,7 @@ public class Producto {
         System.out.println(" Fecha de vencimiento: " + fechaVencimiento);
         System.out.println(" Precio unitario: $" + formatoPrecio.format(precioUnitario));
         System.out.println(" Stock disponible: " + cantidadProducto);
-        System.out.println("---------------------------------------------------------------");
+        System.out.println("-----------------------------------------------");
     }
 
     // Método estático que devuelve cuántos productos se han creado

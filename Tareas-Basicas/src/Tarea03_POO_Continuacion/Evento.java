@@ -66,7 +66,7 @@ public class Evento {
                 System.out.println("   - " + inv);
             }
         }
-        System.out.println("---------------------------------------------------------------");
+        System.out.println("-----------------------------------------------");
     }
 
     // Getters para obtener los datos del evento

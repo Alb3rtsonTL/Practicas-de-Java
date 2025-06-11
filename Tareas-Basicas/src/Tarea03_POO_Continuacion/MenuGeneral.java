@@ -10,9 +10,9 @@ public class MenuGeneral {
         boolean salir = false;
 
         while (!salir) { // Menu principal
-            System.out.println("\n---------------------------------------------------------------");
+            System.out.println("\n-----------------------------------------------");
             System.out.println(" Menú General de Gestores");
-            System.out.println("---------------------------------------------------------------");
+            System.out.println("-----------------------------------------------");
             System.out.println(" 1. Gestor de Productos");
             System.out.println(" 2. Gestor de Eventos");
             System.out.println(" 3. Gestor de Estudiantes");
@@ -30,11 +30,11 @@ public class MenuGeneral {
                     break;
                 case 0: // Salgo del menú
                     salir = true;
-                    System.out.println("---------------------------------------------------------------");
-                    System.out.println(" Saliendo del sistema de productos...");
+                    System.out.println("-----------------------------------------------");
+                    System.out.println(" Saliendo del Menú general del sistema...");
                     break;
                 default: // Si la opción no existe
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" La opción no existe en el menú..]\n");
                     break;
             }
