@@ -29,7 +29,7 @@ public class Evento {
         totalEventos++;
     }
 
-    // Constructor sobrecargado que recibe nombreEvento, fechaEvento, lugarEvento, descripcion, organizador
+    // Constructor sobrecargado que recibe nombreEvento, fechaEvento, lugarEvento, descripcion y organizador
     public Evento(String nombreEvento, LocalDate fechaEvento, String lugarEvento, String descripcion, String organizador) {
         this.nombreEvento = nombreEvento;
         this.fechaEvento = fechaEvento;

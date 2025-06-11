@@ -19,32 +19,35 @@ public class EventoMenu {
         DateTimeFormatter formatoEntrada = DateTimeFormatter.ofPattern("d/M/yyyy");
 
         try {
-            // Evento 1
-            Evento eventoEj1 = new Evento(
-                "Concierto Cristiano",
+            // Evento 1 concierto de Redimi2, Alexezurdo y Funky
+            Evento concierto = new Evento(
+                "Concierto",
                 LocalDate.parse("15/06/2025", formatoEntrada),
                 "Concierto de Redimi2, Alexezurdo y Funky.",
                 "Redimi2 Producciones"
             );
-            eventoEj1.agregarInvitado("Alexandra López");
-            eventoEj1.agregarInvitado("Casandra Terrero López");
-            eventoEj1.agregarInvitado("España Terrero López");
-
-            // Evento 2
-            Evento eventoEj2 = new Evento(
-                "ITLA DevTech Fest 2025",
-                LocalDate.parse("04/07/2025", formatoEntrada),
-                "Auditorio 1",
-                "Exposición de proyectos científicos de estudiantes.",
-                "ITLA"
-            );
             List<String> listaInvitados2 = new ArrayList<>();
             listaInvitados2.add("Robert Ramirez Feliz");
             listaInvitados2.add("Daniel del Carmen Terrero");
-            eventoEj2.agregarListaInvitados(listaInvitados2);
+            concierto.agregarInvitado("España Terrero López");
 
-            eventosRegistrados.add(eventoEj1);
-            eventosRegistrados.add(eventoEj2);
+
+            // Evento 2 campamento de senderismo al Salto de La Maguana con poco equipo
+            Evento campamentoMaguana = new Evento(
+                "Camp. Salto de La Maguana",
+                java.time.LocalDate.parse("22/07/2026", formatoEntrada),
+                "Salto de La Maguana, San Juan",
+                "Campamento de senderismo ligero para visitar el Salto de La Maguana con poco equipo.",
+                "Albertson Terrero López"
+            );
+            campamentoMaguana.agregarInvitado("Alexandra");
+            campamentoMaguana.agregarInvitado("Daniel");
+            campamentoMaguana.agregarInvitado("Casandra");
+            campamentoMaguana.agregarInvitado("Winifer");
+
+            // Guardo los eventos creados en la lista
+            eventosRegistrados.add(campamentoMaguana);
+            eventosRegistrados.add(concierto);
         } catch (DateTimeParseException e) {
             System.out.println("Error al convertir la fecha " + e.getMessage());
         }
