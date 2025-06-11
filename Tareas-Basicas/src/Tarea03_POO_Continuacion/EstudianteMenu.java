@@ -138,7 +138,6 @@ public class EstudianteMenu {
                             e.mostrarDetallesEstudiante();
                         }
                     }
-
                     break;
 
                 case 5: // Muestro el total de estudiantes creados

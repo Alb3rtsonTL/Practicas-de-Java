@@ -45,8 +45,7 @@ public class ProductoMenu {
             scanner.nextLine();
 
             switch (opSeleccionada) {
-                case 1:
-                    // Registrar un nuevo producto
+                case 1: // Registrar un nuevo producto
                     System.out.println("-----------------------------------------------");
                     System.out.println(" Registrar nuevo producto");
                     System.out.println("-----------------------------------------------");
@@ -64,8 +63,7 @@ public class ProductoMenu {
                     System.out.println(" Producto \"" + nombreNuevo + "\" registrado correctamente.");
                     break;
 
-                case 2:
-                    // Agregar cantidad de un producto
+                case 2: // Agregar cantidad de un producto
                     System.out.println("-----------------------------------------------");
                     System.out.println(" Agregar cantidad de un producto");
                     System.out.println("-----------------------------------------------");
@@ -120,8 +118,7 @@ public class ProductoMenu {
                     scanner.nextLine();
                     break;
 
-                case 4:
-                    // Paso la lista de todos los productos registrados
+                case 4: // Paso la lista de todos los productos registrados
                     System.out.println("-----------------------------------------------");
                     System.out.println(" Inventario de Productos");
                     System.out.println("-----------------------------------------------");
@@ -134,21 +131,18 @@ public class ProductoMenu {
                     }
                     break;
 
-                case 5:
-                    // Indico cuantos productos hay
+                case 5: // Indico cuantos productos hay
                     System.out.println("-----------------------------------------------");
                     System.out.println(" Total de productos en el sistema: " + Producto.obtenerTotalProductos());
                     break;
 
-                case 0:
-                    // Salgo del menú
+                case 0: // Salgo del menú
                     salir = true;
                     System.out.println("-----------------------------------------------");
                     System.out.println(" Saliendo del sistema de productos...");
                     break;
 
-                default:
-                    // Si la opción no existe
+                default: // Si la opción no existe
                     System.out.println("-----------------------------------------------");
                     System.out.println(" La opción no existe en el menú..]\n");
                     break;
