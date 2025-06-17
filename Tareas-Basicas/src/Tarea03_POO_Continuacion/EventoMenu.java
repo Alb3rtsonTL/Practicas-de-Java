@@ -19,40 +19,43 @@ public class EventoMenu {
         DateTimeFormatter formatoEntrada = DateTimeFormatter.ofPattern("d/M/yyyy");
 
         try {
-            // Evento 1
-            Evento eventoEj1 = new Evento(
-                "Concierto Cristiano",
+            // Evento 1 concierto de Redimi2, Alexezurdo y Funky
+            Evento concierto = new Evento(
+                "Concierto",
                 LocalDate.parse("15/06/2025", formatoEntrada),
                 "Concierto de Redimi2, Alexezurdo y Funky.",
                 "Redimi2 Producciones"
             );
-            eventoEj1.agregarInvitado("Alexandra López");
-            eventoEj1.agregarInvitado("Casandra Terrero López");
-            eventoEj1.agregarInvitado("España Terrero López");
-
-            // Evento 2
-            Evento eventoEj2 = new Evento(
-                "ITLA DevTech Fest 2025",
-                LocalDate.parse("04/07/2025", formatoEntrada),
-                "Auditorio 1",
-                "Exposición de proyectos científicos de estudiantes.",
-                "ITLA"
-            );
             List<String> listaInvitados2 = new ArrayList<>();
             listaInvitados2.add("Robert Ramirez Feliz");
             listaInvitados2.add("Daniel del Carmen Terrero");
-            eventoEj2.agregarListaInvitados(listaInvitados2);
+            concierto.agregarInvitado("España Terrero López");
 
-            eventosRegistrados.add(eventoEj1);
-            eventosRegistrados.add(eventoEj2);
+
+            // Evento 2 campamento de senderismo al Salto de La Maguana con poco equipo
+            Evento campamentoMaguana = new Evento(
+                "Camp. Salto de La Maguana",
+                java.time.LocalDate.parse("22/07/2026", formatoEntrada),
+                "Salto de La Maguana, San Juan",
+                "Campamento de senderismo ligero para visitar el Salto de La Maguana con poco equipo.",
+                "Albertson Terrero López"
+            );
+            campamentoMaguana.agregarInvitado("Alexandra");
+            campamentoMaguana.agregarInvitado("Daniel");
+            campamentoMaguana.agregarInvitado("Casandra");
+            campamentoMaguana.agregarInvitado("Winifer");
+
+            // Guardo los eventos creados en la lista
+            eventosRegistrados.add(campamentoMaguana);
+            eventosRegistrados.add(concierto);
         } catch (DateTimeParseException e) {
             System.out.println("Error al convertir la fecha " + e.getMessage());
         }
 
         while (!salir) { // Este es el bucle para el menu
-            System.out.println("---------------------------------------------------------------");
+            System.out.println("-----------------------------------------------");
             System.out.println(" Gestión de Eventos");
-            System.out.println("---------------------------------------------------------------");
+            System.out.println("-----------------------------------------------");
             System.out.println(" 1. Crear evento (sin lugar)");
             System.out.println(" 2. Crear evento (con lugar)");
             System.out.println(" 3. Agregar invitados a un evento");
@@ -68,9 +71,9 @@ public class EventoMenu {
 
             switch (opcion) {
                 case 1: // Creo un evento sin lugar
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Crear Evento sin asignar un lugar");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     try {
                         System.out.print(" Nombre del evento: ");
                         String nombreE1 = scanner.nextLine();
@@ -90,9 +93,9 @@ public class EventoMenu {
                     break;
 
                 case 2: // Crear evento con lugar
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Crear Evento asignando un lugar");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     try {
                         System.out.print(" Nombre del evento: ");
                         String nombreE2 = scanner.nextLine();
@@ -114,9 +117,9 @@ public class EventoMenu {
                     break;
 
                 case 3: // Agrego los invitados a un evento seleccionado
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Agregar invitados a un evento especifico");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     if (eventosRegistrados.isEmpty()) {
                         System.out.println(" No hay eventos registrados aún.");
                         break;
@@ -163,9 +166,9 @@ public class EventoMenu {
                     break;
 
                 case 4: // Muestro todos los eventos
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Eventos registrados en el sistema");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     if (eventosRegistrados.isEmpty()) {
                         System.out.println(" No hay eventos registrados.");
                     } else {
@@ -176,14 +179,14 @@ public class EventoMenu {
                     break;
 
                 case 5: // Muestro el total de eventos creados
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Total de eventos creados: " + Evento.obtenerTotalEventos());
                     break;
 
                 case 6: // Muestro los eventos por fecha
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Filtrar los eventos por fecha");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     if (eventosRegistrados.isEmpty()) {
                         System.out.println(" No hay eventos registrados.");
                         break;
@@ -209,9 +212,9 @@ public class EventoMenu {
                     break;
 
                 case 7: // Muestro la lista de lugares registrados
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Filtro los lugares eventos sin repetir el lugar");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     if (eventosRegistrados.isEmpty()) {
                         System.out.println(" No hay eventos registrados.");
                         break;
@@ -230,9 +233,9 @@ public class EventoMenu {
                     break;
 
                 case 8: // Muestro los eventos de un lugar específico
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Buscar eventos registrados en el sistema");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     if (eventosRegistrados.isEmpty()) {
                         System.out.println(" No hay eventos registrados.");
                         break;
@@ -253,13 +256,13 @@ public class EventoMenu {
 
                 case 0: // Salgo del menú
                     salir = true;
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Saliendo del sistema de productos...");
                     break;
 
                 default: // Si la opción no existe
-                    System.out.println("---------------------------------------------------------------");
-                    System.out.println(" La opción no existe. Esa opción no existe en el menú..]\n");
+                    System.out.println("-----------------------------------------------");
+                    System.out.println(" La opción no existe en el menú..]\n");
                     break;
             }
         }

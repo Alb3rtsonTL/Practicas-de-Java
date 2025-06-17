@@ -31,9 +31,9 @@ public class ProductoMenu {
 
         // Bucle del menú
         while (!salir) {
-            System.out.println("---------------------------------------------------------------");
+            System.out.println("-----------------------------------------------");
             System.out.println(" Gestión de Productos");
-            System.out.println("---------------------------------------------------------------");
+            System.out.println("-----------------------------------------------");
             System.out.println(" 1. Registrar nuevo producto");
             System.out.println(" 2. Agregar stock a un producto");
             System.out.println(" 3. Vender un producto");
@@ -45,11 +45,10 @@ public class ProductoMenu {
             scanner.nextLine();
 
             switch (opSeleccionada) {
-                case 1:
-                    // Registrar un nuevo producto
-                    System.out.println("---------------------------------------------------------------");
+                case 1: // Registrar un nuevo producto
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Registrar nuevo producto");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.print(" Ingrese nombre del producto: ");
                     String nombreNuevo = scanner.nextLine();
                     System.out.print(" Ingrese precio unitario: ");
@@ -64,11 +63,10 @@ public class ProductoMenu {
                     System.out.println(" Producto \"" + nombreNuevo + "\" registrado correctamente.");
                     break;
 
-                case 2:
-                    // Agregar cantidad de un producto
-                    System.out.println("---------------------------------------------------------------");
+                case 2: // Agregar cantidad de un producto
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Agregar cantidad de un producto");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Lista de productos:");
                     if (productosRegistrados.isEmpty()) {
                         System.out.println(" No hay productos registrados aún.");
@@ -94,9 +92,9 @@ public class ProductoMenu {
                     break;
 
                 case 3:
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Lista de productos:");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     if (productosRegistrados.isEmpty()) {
                         System.out.println(" No hay productos registrados aún.");
                         break;
@@ -120,11 +118,10 @@ public class ProductoMenu {
                     scanner.nextLine();
                     break;
 
-                case 4:
-                    // Paso la lista de todos los productos registrados
-                    System.out.println("---------------------------------------------------------------");
+                case 4: // Paso la lista de todos los productos registrados
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Inventario de Productos");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     if (productosRegistrados.isEmpty()) {
                         System.out.println("  No hay productos registrados.");
                     } else {
@@ -134,23 +131,20 @@ public class ProductoMenu {
                     }
                     break;
 
-                case 5:
-                    // Indico cuantos productos hay
-                    System.out.println("---------------------------------------------------------------");
+                case 5: // Indico cuantos productos hay
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Total de productos en el sistema: " + Producto.obtenerTotalProductos());
                     break;
 
-                case 0:
-                    // Salgo del menú
+                case 0: // Salgo del menú
                     salir = true;
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Saliendo del sistema de productos...");
                     break;
 
-                default:
-                    // Si la opción no existe
-                    System.out.println("---------------------------------------------------------------");
-                    System.out.println(" La opción no existe. Esa opción no existe en el menú..]\n");
+                default: // Si la opción no existe
+                    System.out.println("-----------------------------------------------");
+                    System.out.println(" La opción no existe en el menú..]\n");
                     break;
             }
         }

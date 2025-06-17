@@ -35,9 +35,9 @@ public class EstudianteMenu {
         estudiantesRegistrados.add(estEj2);
 
         while (!salir) { // Bucle del menú
-            System.out.println("---------------------------------------------------------------");
+            System.out.println("-----------------------------------------------");
             System.out.println(" Gestión de Estudiantes");
-            System.out.println("---------------------------------------------------------------");
+            System.out.println("-----------------------------------------------");
             System.out.println(" 1. Registrar estudiante -(sin carrera)");
             System.out.println(" 2. Registrar estudiante -(con carrera)");
             System.out.println(" 3. Agregar materias a un estudiante");
@@ -50,9 +50,9 @@ public class EstudianteMenu {
 
             switch (opSeleccionada) {
                 case 1: // Registro un estudiante sin carrera
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Registrar a un estudiante sin asignar la carrera");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.print(" Nombre del estudiante: ");
                     String nombre1 = scanner.nextLine();
                     System.out.print(" Matrícula: ");
@@ -63,9 +63,9 @@ public class EstudianteMenu {
                     break;
 
                 case 2: // Registro un estudiante con carrera
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Registrar estudiante");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.print(" Nombre del estudiante: ");
                     String nombre2 = scanner.nextLine();
                     System.out.print(" Matrícula: ");
@@ -78,9 +78,9 @@ public class EstudianteMenu {
                     break;
 
                 case 3: // Agrego materias a un estudiante que especifique el usuario
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Agregar materias a un estudiante");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     if (estudiantesRegistrados.isEmpty()) {
                         System.out.println(" No hay estudiantes registrados aún.");
                         break;
@@ -128,9 +128,9 @@ public class EstudianteMenu {
                     break;
 
                 case 4: // Muestro todos los estudiantes
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Lista de estudiantes registrados");
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     if (estudiantesRegistrados.isEmpty()) {
                         System.out.println(" No hay ningún estudiante registrado.");
                     } else {
@@ -138,23 +138,22 @@ public class EstudianteMenu {
                             e.mostrarDetallesEstudiante();
                         }
                     }
-
                     break;
 
                 case 5: // Muestro el total de estudiantes creados
-                    System.out.println("---------------------------------------------------------------");
+                    System.out.println("-----------------------------------------------");
                     System.out.println(" Total de estudiantes creados: " + Estudiante.obtenerTotalEstudiantes());
                     break;
 
                 case 0: // Salgo del menú
                     salir = true;
-                    System.out.println("---------------------------------------------------------------");
-                    System.out.println(" Saliendo del gestor de estudiantes...\n");
+                    System.out.println("-----------------------------------------------");
+                    System.out.println(" Saliendo del gestor de estudiantes...");
                     break;
 
                 default: // Si la opción no existe
-                    System.out.println("---------------------------------------------------------------");
-                    System.out.println(" La opción no existe. Esa opción no existe en el menú..");
+                    System.out.println("-----------------------------------------------");
+                    System.out.println(" La opción no existe en el menú..");
                     break;
             }
         }
