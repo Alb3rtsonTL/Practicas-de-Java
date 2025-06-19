@@ -185,6 +185,7 @@ public class AgenciaAlquiler {
 
                 case 0: // Salgo del menú
                     salir = true;
+                    scanner.close();
                     System.out.println("-----------------------------------------------");
                     System.out.println(" Saliendo del Menú general del sistema...");
                     break;
